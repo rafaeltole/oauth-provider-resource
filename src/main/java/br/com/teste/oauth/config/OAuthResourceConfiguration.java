@@ -19,7 +19,7 @@ public class OAuthResourceConfiguration extends ResourceServerConfigurerAdapter 
     public void configure(final HttpSecurity http) throws Exception {
         http.authorizeRequests()//
                 .antMatchers("/oauth/*", "/teste/semToken").permitAll()//
-                .and().authorizeRequests().antMatchers("/teste/comToken").authenticated();
+                .and().authorizeRequests().anyRequest().authenticated();
 
     }
 
