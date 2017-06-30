@@ -1,0 +1,13 @@
+--- Tutorial
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
+
+--- obter token
+curl -X POST -k --user 'resource:secret' -d 'grant_type=client_credentials' http://localhost:8180/oauth-provider-authorization/oauth/token
+
+--- check token
+curl -X POST -k --user 'resource:secret' -d 'grant_type=client_credentials' -d "token=3047cf86-9453-4fe1-a7b2-12c2b241c5e8" http://localhost:8180/oauth-provider-authorization/oauth/check_token
+
+--- Acesso com Token
+curl -ik -H "Accept: application/json" -H "Authorization: Bearer 429b4729-b469-4baf-9393-49f40b032bfd" -X GET  http://localhost:8280/oauth-provider-resource/teste/comToken
+
+ 
